@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSHacker</title>
+</head>
+
+<body>
+	<div id='myDiv'></div>
+</body>
+
+<script src="https://unpkg.com/@stackblitz/sdk/bundles/sdk.umd.js"></script>
+<script type='text/javascript' src="./project.js"></script>
+<script>
+
+// Method to open project in new window
+window['openNewProject'] = () => {
+  StackBlitzSDK.openProject(project);
+}
+
+
+// Method to embed this project
+window['embedNewProject'] = () => {
+  StackBlitzSDK.embedProject('myDiv', project, { height: 620 });
+}
+
+const reduxRepoPath = 'priyanshuchauhan/react-redux-barebones';
+
+window['embedGithubProject'] = () => {
+  StackBlitzSDK.embedGithubProject(
+    'myDiv',
+    reduxRepoPath,
+    { height: 620 }
+  );
+}
+
+
+// embedNewProject();
+embedGithubProject();
+</script>
+</html>
